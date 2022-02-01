@@ -21,9 +21,6 @@
     <properties>
         <java.version>11</java.version>
     </properties>
-    <dependencies>
-    </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -38,7 +35,17 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <goal>install</goal>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
-
+<scm>
+    <developerConnection>scm:git:git@github.com:Ankit-Ian-53787/pet-clinic.git</developerConnection>
+</scm>
 </project>
