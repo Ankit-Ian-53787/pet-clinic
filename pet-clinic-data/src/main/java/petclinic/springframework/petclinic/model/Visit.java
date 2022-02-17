@@ -1,11 +1,20 @@
 package petclinic.springframework.petclinic.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "visits")
 public class Visit extends  BaseEntity{
 
+    @Column(name = "date")
     private LocalDate date;
-    private String descryption;
+
+    @Column(name = "description")
+    private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "pet_id")
     private Pet pet;
 
     public LocalDate getDate() {
@@ -16,12 +25,12 @@ public class Visit extends  BaseEntity{
         this.date = date;
     }
 
-    public String getDescryption() {
-        return descryption;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescryption(String descryption) {
-        this.descryption = descryption;
+    public void setDescription(String descryption) {
+        this.description = descryption;
     }
 
     public Pet getPet() {
