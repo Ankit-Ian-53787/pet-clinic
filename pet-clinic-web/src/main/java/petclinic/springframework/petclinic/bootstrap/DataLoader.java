@@ -3,10 +3,7 @@ package petclinic.springframework.petclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import petclinic.springframework.petclinic.model.*;
-import petclinic.springframework.petclinic.services.OwnerService;
-import petclinic.springframework.petclinic.services.PetTypeService;
-import petclinic.springframework.petclinic.services.SpecialtyService;
-import petclinic.springframework.petclinic.services.VetServices;
+import petclinic.springframework.petclinic.services.*;
 
 import java.time.LocalDate;
 
@@ -16,12 +13,14 @@ private  final OwnerService ownerService;
 private final VetServices vetServices;
 private final PetTypeService petTypeService;
 private final SpecialtyService specialtyService;
+private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetServices vetServices, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetServices vetServices, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetServices = vetServices;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -85,6 +84,13 @@ private final SpecialtyService specialtyService;
         fionasPet.setName("Mochiko");
         owner2.getPets().add(fionasPet);
         ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasPet);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("sneezy kitty");
+
+        visitService.save(catVisit);
 
         System.out.println("Loaded owners");
 
