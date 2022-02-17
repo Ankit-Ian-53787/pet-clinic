@@ -8,10 +8,10 @@ import petclinic.springframework.petclinic.services.VetServices;
 
 import java.util.Set;
 @Service
-public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetServices {
+public class VetMapService extends AbstractMapService<Vet,Long> implements VetServices {
     private final SpecialtyService specialtyService;
 
-    public VetServiceMap(SpecialtyService specialtyService) {
+    public VetMapService(SpecialtyService specialtyService) {
         this.specialtyService = specialtyService;
     }
 

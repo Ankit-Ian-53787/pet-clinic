@@ -6,7 +6,7 @@ import petclinic.springframework.petclinic.services.PetServices;
 
 import java.util.Set;
 @Service
-public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetServices {
+public class PetMapService extends AbstractMapService<Pet,Long> implements PetServices {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();
