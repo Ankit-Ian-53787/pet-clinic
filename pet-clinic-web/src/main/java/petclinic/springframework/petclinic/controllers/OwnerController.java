@@ -7,10 +7,10 @@ import petclinic.springframework.petclinic.services.OwnerService;
 
 @RequestMapping("/owners")
 @Controller
-public class ownerController {
+public class OwnerController {
     private final OwnerService ownerService;
 
-    public ownerController(OwnerService ownerService) {
+    public OwnerController(OwnerService ownerService) {
         this.ownerService = ownerService;
     }
 

@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import petclinic.springframework.petclinic.services.VetServices;
 
 @Controller
-public class vetController {
+public class VetController {
 
     private final VetServices vetServices;
 
-    public vetController(VetServices vetServices) {
+    public VetController(VetServices vetServices) {
         this.vetServices = vetServices;
     }
 
