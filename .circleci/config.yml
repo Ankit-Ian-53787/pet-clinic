@@ -29,5 +29,4 @@ workflows:
       - one
       - two
 
-
-        -run: mvn install
+-run: mvn integration-test
